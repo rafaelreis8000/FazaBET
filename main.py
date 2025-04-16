@@ -141,3 +141,15 @@ while tela_aposta1 == True:
             '\n\n   \033[35m-->\033[0m  '
             .format('='*25 , emojize(':tiger_face:') , emojize(':cow_face:') , emojize(':rabbit_face:') , emojize(':panda:') , emojize(':dragon_face:'))
         )
+
+        jogada = ['TIGRINHO','TOURINHO','COELHINHO','PANDINHA','DRAGÃOZINHO']
+        pc = choice(jogada)
+
+        for i in range (8): #Animação dos nomes correndo na tela, simulando "sorteio"
+            for value in jogada:
+                print('{}\n\n       \033[36m{}\033[0m'.format('='*25, value))
+                sleep(0.06)
+                system('cls')
+
+        print('{}\n\n    \033[36mE EU ESCOLHI....\033[0m \n\n      \033[35m{}!!!\033[0m'.format('='*25,pc))
+        sleep(3)
