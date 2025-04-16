@@ -1,7 +1,6 @@
 from os import system
 from time import sleep
 from random import choice
-from emoji import emojize
 
 system('cls')
 saldo = float(20) #inicializa um saldo de 20 reais
@@ -139,14 +138,14 @@ while True: #aqui inicia-se a parte do jogo verdadeiramente
             bichinho_aposta = input(
                 '{}\n  \033[36mQUAL SERÁ O BICHINHO'
                 '\n       DA SORTE?\033[0m'
-                '\n\n  \033[33m[ 1 ] Tigrinho {}'
-                '\n  [ 2 ] Tourinho {}'
-                '\n  [ 3 ] Coelhinho {}'
-                '\n  [ 4 ] Pandinha {}'
-                '\n  [ 5 ] Dragãozinho {}'
-                '\n  [ 6 ] SAIR\033[0m'
+                '\n\n  \033[33m[ 1 ] Tigrinho \N{TIGER}'
+                '\n  [ 2 ] Tourinho \U0001F402'
+                '\n  [ 3 ] Coelhinho \U0001F407'
+                '\n  [ 4 ] Pandinha \U0001F43C'
+                '\n  [ 5 ] Dragãozinho \U0001F409'
+                '\n\n  [ 6 ] SAIR\033[0m'
                 '\n\n   \033[35m-->\033[0m  '
-                .format('='*25 , emojize(':tiger_face:') , emojize(':cow_face:') , emojize(':rabbit_face:') , emojize(':panda:') , emojize(':dragon_face:'))
+                .format('='*25)
             )
 
             if bichinho_aposta == '1':
