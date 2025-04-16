@@ -5,8 +5,9 @@ import emoji
 
 system('cls')
 
-jogo = bool(True)
-while jogo == True:
+jogo = bool(False)
+while jogo == False:
+    system('cls')
     
     telainicial = input(
         '{}\n      \033[33mFAZ A BET!!!!\033[0m'
@@ -17,22 +18,58 @@ while jogo == True:
         .format('='*25)
     ).strip().upper()
 
-    if telainicial == '1':
-        break
+    if telainicial == '1': #O jogo se torna verdadeiro, possibilitando continuar com o jogo
+        jogo = True
 
-    elif telainicial == '2':
+    elif telainicial == '2': #A opção de sair foi selecionada, mais uma checagem será feita
         system('cls')
+        sleep(0.2)
         sair = input(
-            '{}DESEJA SAIR?'
+            '{}\n      \033[33mDESEJA SAIR?\033[0m'
             '\n\n[ 1 ] SIM'
             '\n[ 2 ] NÃO'
-            '\n\n -->  '
-        )
+            '\n\n \033[35m-->\033[0m  '
+            .format('='*25)
+        ).strip().upper()
 
-        if sair == '1':
+        if sair == '1': #Confirma saída
             system('cls')
+            sleep(0.2)
+            print('{}\n     Saindo...'.format('='*25))
+            sleep(2)
+            exit()
+
+        elif sair == '2': #Cancela a saída, o jogo volta a ser verdadeiro
+            system('cls')
+            sleep(0.2)
             jogo == True
 
-        elif sair == '2':
-            system('cls')
-            exit()
+        else:
+            system('cls') #erros de digitação
+            sleep(0.2)
+            print('{}\n \033[31mInsira um valor válido\n   e tente novamente!\033[0m'.format('='*25))
+            sleep(2)
+
+menu_inicial = bool(True)
+while menu_inicial == True:
+    system('cls')
+    sleep(0.2)
+    saldo = int(20)
+    
+    escolha_menu = input(
+        '{}\n\033[33m    BET DOS BICHINHOS\033[0m'
+        '\n\n[ 1 ] APOSTAR'
+        '\n[ 2 ] SALDO'
+        '\n\n \033[35m-->\033[0m  '
+        .format('='*25)
+    ).strip().upper()
+
+    if escolha_menu == '1':
+        menu_inicial = False
+
+    elif escolha_menu == '2':
+        
+        system('cls')
+        sleep(0.2)
+        print('{}\n  \033[33mVocê tem um saldo de:\033[0m\n\n        \033[32mR${},00\033[0m\n\n{}'.format('='*25 , saldo , '='*25))
+        sleep(2)
