@@ -53,6 +53,8 @@ while jogo == False:
 
 
 
+
+
 menu_inicial = bool(True)
 while menu_inicial == True:
     system('cls')
@@ -77,6 +79,8 @@ while menu_inicial == True:
         sleep(0.2)
         print('{}\n  \033[33mVocê tem um saldo de:\033[0m\n\n        \033[32mR${:.2f}\033[0m\n\n{}'.format('='*25 , saldo , '='*25))
         sleep(2)
+
+
 
 
 
@@ -125,6 +129,8 @@ while tela_aposta1 == True:
 
 
 
+
+
     tela_aposta2 = bool(True) #tela de escolha do bichinho da aposta
     while tela_aposta2 == True:
         system('cls')
@@ -142,6 +148,17 @@ while tela_aposta1 == True:
             .format('='*25 , emojize(':tiger_face:') , emojize(':cow_face:') , emojize(':rabbit_face:') , emojize(':panda:') , emojize(':dragon_face:'))
         )
 
+        if bichinho_aposta == '1':
+            bichinho_aposta == 'TIGRINHO'
+        elif bichinho_aposta == '2':
+            bichinho_aposta == 'TOURINHO'
+        elif bichinho_aposta == '3':
+            bichinho_aposta == 'COELHINHO'
+        elif bichinho_aposta == '4':
+            bichinho_aposta == 'PANDINHA'
+        elif bichinho_aposta == '5':
+            bichinho_aposta == 'DRAGÃOZINHO'
+
         jogada = ['TIGRINHO','TOURINHO','COELHINHO','PANDINHA','DRAGÃOZINHO']
         pc = choice(jogada)
 
@@ -151,5 +168,15 @@ while tela_aposta1 == True:
                 sleep(0.06)
                 system('cls')
 
-        print('{}\n\n    \033[36mE EU ESCOLHI....\033[0m \n\n      \033[35m{}!!!\033[0m'.format('='*25,pc))
+        print('{}\n\n    \033[36mE EU ESCOLHI....\033[0m \n\n     \033[35m{}!!!\033[0m'.format('='*25,pc))
         sleep(3)
+
+        if bichinho_aposta == pc:
+            system('cls')
+            print('{}\n\n     VOCÊ GANHOU!!!'.format('='*25))
+            sleep(3)
+
+        else:
+            system('cls')
+            print('{}\n\n     VOCÊ PERDEU!!!'.format('='*25))
+            sleep(3)
