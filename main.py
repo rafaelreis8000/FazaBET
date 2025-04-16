@@ -1,7 +1,7 @@
 from os import system
 from time import sleep
 from random import choice
-import emoji
+from emoji import emojize
 
 system('cls')
 
@@ -51,11 +51,14 @@ while jogo == False:
             sleep(2)
 
 
+
+
 menu_inicial = bool(True)
 while menu_inicial == True:
     system('cls')
     sleep(0.2)
-    saldo = float(20)
+
+    saldo = float(20) #o saldo será utilizado para realizar as apostas. Quando for menor que um real, você perde
     
     escolha_menu = input(
         '{}\n\033[33m    BET DOS BICHINHOS\033[0m'
@@ -75,7 +78,10 @@ while menu_inicial == True:
         print('{}\n  \033[33mVocê tem um saldo de:\033[0m\n\n        \033[32mR${:.2f}\033[0m\n\n{}'.format('='*25 , saldo , '='*25))
         sleep(2)
 
-tela_aposta1 = bool(True)
+
+
+
+tela_aposta1 = bool(True) #tela de escolha do valor da aposta
 while tela_aposta1 == True:
     system('cls')
     sleep(0.2)
@@ -86,7 +92,7 @@ while tela_aposta1 == True:
                 '{}\n\033[33mInforme o valor da aposta\033[0m'
                 '\n\nSeu saldo é de \033[32mR${:.2f}\033[0m'
                 '\n\n\033[31mapostas mínimas de 1 rea\033[0m'
-                '\n\n \033[35m-->\033[0m  '
+                '\n\n \033[35m-->\033[0m R$'
                 .format('='*25 , saldo)
             )
         )
@@ -96,6 +102,7 @@ while tela_aposta1 == True:
             sleep(0.2)
             print('{}\n \033[31mInsira um valor válido\n   e tente novamente!\033[0m'.format('='*25))
             sleep(2)
+            continue #repete o laço
 
         elif valor_aposta < 1: #se a van for menor que 1
             system('cls')
@@ -111,5 +118,25 @@ while tela_aposta1 == True:
         sleep(0.2)
         print('{}\n \033[31mInsira um valor válido\n   e tente novamente!\033[0m'.format('='*25))
         sleep(2)
+        tela_aposta1 = True
+        continue #repete o laço
 
-print('Jogo do tigrinho')
+
+
+
+    tela_aposta2 = bool(True) #tela de escolha do bichinho da aposta
+    while tela_aposta2 == True:
+        system('cls')
+        sleep(0.2)
+
+        bichinho_aposta = input(
+            '{}\n  \033[36mQUAL SERÁ O BICHINHO'
+            '\n       DA SORTE?\033[0m'
+            '\n\n  \033[33m[ 1 ] Tigrinho {}'
+            '\n  [ 2 ] Tourinho {}'
+            '\n  [ 3 ] Coelhinho {}'
+            '\n  [ 4 ] Pandinha {}'
+            '\n  [ 5 ] Dragãozinho\033[0m {}'
+            '\n\n   \033[35m-->\033[0m  '
+            .format('='*25 , emojize(':tiger_face:') , emojize(':cow_face:') , emojize(':rabbit_face:') , emojize(':panda:') , emojize(':dragon_face:'))
+        )
