@@ -111,6 +111,7 @@ while tela_aposta1 == True:
             sleep(2)
 
         else: #se o valor estiver dentro de saldo, encerra a tela de apostas 1
+            saldo = saldo - valor_aposta #remove o saldo para apostar
             tela_aposta1 = False
     
     except ValueError: #em caso de erro de digitação, caracteres especiais...
