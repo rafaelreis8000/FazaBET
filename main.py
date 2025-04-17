@@ -209,26 +209,31 @@ while True: #aqui inicia-se a parte do jogo verdadeiramente
 
                 if bichinho_aposta == 'TIGRINHO': #tigrinho é o que mais paga, retorna 100% do valor
                     print('{}\n\n   SEU SALDO AGORA É:\n    R${}'.format('='*25, (saldo + valor_aposta) + (saldo + valor_aposta)))
+                    saldo = (saldo + valor_aposta) + valor_aposta * 2
                     sleep(3)
                     break
 
-                if bichinho_aposta == 'TOURINHO': #tourinho retorna 50%
+                elif bichinho_aposta == 'TOURINHO': #tourinho retorna 50%
                     print('{}\n\n   SEU SALDO AGORA É:\n    R${}'.format('='*25, (saldo + valor_aposta) + ((50/100)*valor_aposta)))
+                    saldo = (saldo + valor_aposta) + ((50/100)*valor_aposta)
                     sleep(3)
                     break
 
-                if bichinho_aposta == 'COELHINHO': # coelhinho retorna 25%
+                elif bichinho_aposta == 'COELHINHO': # coelhinho retorna 25%
                     print('{}\n\n   SEU SALDO AGORA É:\n    R${}'.format('='*25, (saldo + valor_aposta) + ((25/100)*valor_aposta)))
+                    saldo = (saldo + valor_aposta) + ((25/100)*valor_aposta)
                     sleep(3)
                     break
 
-                if bichinho_aposta == 'PANDINHA': # pandinha retorna 15%
+                elif bichinho_aposta == 'PANDINHA': # pandinha retorna 15%
                     print('{}\n\n   SEU SALDO AGORA É:\n    R${}'.format('='*25, (saldo + valor_aposta) + ((15/100)*valor_aposta)))
+                    saldo = (saldo + valor_aposta) + ((15/100)*valor_aposta)
                     sleep(3)
                     break
 
-                if bichinho_aposta == 'DRAGÃOZINHO': # pandinha retorna 10%
-                    print('{}\n\n   SEU SALDO AGORA É:\n    R${}'.format('='*25, (saldo + valor_aposta) + ((15/100)*valor_aposta)))
+                elif bichinho_aposta == 'DRAGÃOZINHO': # pandinha retorna 10%
+                    print('{}\n\n   SEU SALDO AGORA É:\n    R${}'.format('='*25, (saldo + valor_aposta) + ((10/100)*valor_aposta)))
+                    saldo = (saldo+valor_aposta) + ((10/100)*valor_aposta)
                     sleep(3)
                     break
 
@@ -262,4 +267,5 @@ while True: #aqui inicia-se a parte do jogo verdadeiramente
                     sleep(0.2)
                     print('{}\n        Saindo...'.format('='*25))
                     sleep(2)
+                    system('cls')
                     exit()
